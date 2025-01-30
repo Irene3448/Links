@@ -1,0 +1,4 @@
+body{
+	--base-size: 12px;
+	--gutter-size: calc(3*var(--base-size));
+}
