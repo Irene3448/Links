@@ -7,10 +7,16 @@
 	--body-font-family: 'inter';
 }
 
+nav{
+	line-height: 1.8rem;
+}
+
 body{
-	margin: 1rem;
+	font-family: var(--body-font-family);
 	font-size: 1.125rem;
 	line-height: 1.6;
+	background-color: black;
+	color: white;
 	margin: 1.25rem;
 	/* --gutter-size: calc(3*var(--base-size)); */
 }
@@ -24,6 +30,7 @@ h1{
 	font-size: 3.5rem;
 	font-weight: bold;
 	line-height: 4rem;
+	color: white;
 }
 
 h2{
@@ -31,11 +38,13 @@ h2{
 	font-size: 2rem;
 	font-weight: bold;
 	line-height: 2.4rem;
+	color: white;
 }
 
 footer{
 	font-size:1.25rem;
 	font-weight: 450;
+	color: white;
 }
 
 
