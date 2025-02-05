@@ -18,9 +18,7 @@ nav{
 }
 
 nav :hover{
-	font-weight: 400;
 	color:var(--primary-color);
-	text-decoration: underline;
 }
 
 body{
