@@ -5,10 +5,22 @@
 :root{
 	--title-font-family: 'instrument serif', serif;
 	--body-font-family: 'inter';
+
+	--heading-font-size: 2.6rem;
+	--base-font-size: 1.125rem;
+	
+	--primary-color: #cdea19;
+	--secondary-color: #ff4d00;
 }
 
 nav{
 	line-height: 1.8rem;
+}
+
+nav :hover{
+	font-weight: 400;
+	color:var(--primary-color);
+	text-decoration: underline;
 }
 
 body{
@@ -23,17 +35,22 @@ body{
 }
 
 img{
-	weight: 85%
+	width: 100%;
+	border-radius: 3%;
+	margin-bottom: 1rem;
+	overflow: hidden;
 }
 
 header{height:100%;}
+
+.yellow{color:var(--primary-color);}
+.orange{color:var(--secondary-color);}
 
 h1{
 	font-family: var(--title-font-family);
 	font-size: 2.6rem;
 	font-weight: lighter;
 	line-height: 3rem;
-	color: white;
 	margin-block: 2rem;
 	margin-top: 18rem;
 	margin-bottom: 1.5rem;
@@ -41,17 +58,17 @@ h1{
 
 h2{
 	font-family: var(--title-font-family);
-	font-size: 2rem;
-	font-weight: lighter;
+	font-size: 1.5rem;
 	line-height: 2.4rem;
-	margin-block: 1rem;
-	color: white;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
 footer{
-	font-size:1.25rem;
-	font-weight: 450;
-	color: white;
+	margin-block: 1.8rem;
+	font-family: var(--body-font-family);
+	font-size: 1rem;
+	text-align: center;
 }
 
 
