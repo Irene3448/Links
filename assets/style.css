@@ -23,28 +23,28 @@ body{
 }
 
 img{
-	weight: 90%
+	weight: 85%
 }
 
 header{height:100%;}
 
 h1{
 	font-family: var(--title-font-family);
-	font-size: 2.8rem;
+	font-size: 2.6rem;
 	font-weight: lighter;
 	line-height: 3rem;
 	color: white;
 	margin-block: 2rem;
-	margin-top: 20rem;
-	margin-bottom: 2rem;
+	margin-top: 18rem;
+	margin-bottom: 1.5rem;
 }
 
 h2{
 	font-family: var(--title-font-family);
 	font-size: 2rem;
-	font-weight: bold;
+	font-weight: lighter;
 	line-height: 2.4rem;
-	margin-top: 3rem;
+	margin-block: 1rem;
 	color: white;
 }
 
