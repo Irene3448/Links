@@ -60,12 +60,6 @@ let renderBlock = (block) => {
 	// Text!
 	else if (block.class == 'Text') {
 		// …up to you!
-		let textItem = `
-		<p>${block.content_html}</p>
-		<p>Created on ${block.created_at}</p>
-		`
-
-		channelBlocks.insertAdjacentHTML('beforeend', textItem)
 	}
 
 	// Uploaded (not linked) media…
@@ -154,12 +148,6 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 	.then((response) => response.json()) // Return it as JSON data
 	.then((data) => { // Do stuff with the data
 		console.log(data) // Always good to check your response!
-		placeChannelInfo(data)
-		
-		// Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
-		data.contents.reverse().forEach((block) => {
-			// console.log(block) // The data for a single block
-			renderBlock(block) // Pass the single block data to the render function
-		})
-
+		console.log(data.title)
+		console.log(data.created_at)
 	})
