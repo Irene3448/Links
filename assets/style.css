@@ -31,11 +31,6 @@ body{
 	/* --gutter-size: calc(3*var(--base-size)); */
 }
 
-/* p{
-	font-size: 1rem;
-	margin-bottom: 1rem;
-} */
-
 img video{
 	width: 100%;
 	object-fit: contain;
@@ -83,4 +78,17 @@ footer{
 
 
 @media (min-width: 425px){}
-@media (min-width: 768px){}
+@media (min-width: 768px){
+
+	/* img{
+		width: 50%;
+	}
+
+	#channel-blocks {
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+		gap: 10px;
+		justify-content: center;
+		padding-top: 20px;
+	}
+} */
