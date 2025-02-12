@@ -16,13 +16,13 @@ let placeChannelInfo = (data) => {
 	// Target some elements in your HTML:
 	// let channelTitle = document.querySelector('#channel-title')
 	// let channelDescription = document.querySelector('#channel-description')
-	let channelCount = document.querySelector('#channel-count')
+	// let channelCount = document.querySelector('#channel-count')
 	let channelLink = document.querySelector('#channel-link')
 
 	// Then set their content/attributes to our data:
 	// channelTitle.innerHTML = data.title
 	// channelDescription.innerHTML = window.markdownit().render(data.metadata.description) // Converts Markdown → HTML
-	channelCount.innerHTML = data.length
+	// channelCount.innerHTML = data.length
 	channelLink.href = `https://www.are.na/channel/${channelSlug}`
 }
 
@@ -37,16 +37,13 @@ let renderBlock = (block) => {
 	if (block.class == 'Link') {
 		let linkItem =
 			`
-			<li>
-				<p><em>Link</em></p>
+			<li><a href="${ block.source.url }">
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
 					<img src="${ block.image.original.url }">
-				</picture>
+				</picture></a>
 				<h3>${ block.title }</h3>
-				${ block.description_html }
-				<p><a href="${ block.source.url }">See the original ↗</a></p>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
@@ -60,9 +57,20 @@ let renderBlock = (block) => {
 	// Text!
 	else if (block.class == 'Text') {
 		// …up to you!
+
+		//Trying to shorten text
+		function truncateText(text, wordLimit) {
+			const words = text.split(" "); // Split text 
+			if (words.length > wordLimit){
+				return words.slice(0,wordLimit).join(" ") + "..." // Keep only the first few words
+			}
+			return text; 
+		}
+
+		let truncatedContent= truncateText(block.content_html, 20) // Limit to 20 words
+
 		let textItem = `
-		<p>${block.content_html}</p>
-		<p>Created on ${block.created_at}</p>
+		<p>${truncatedContent}</p>
 		`
 
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
