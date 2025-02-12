@@ -86,7 +86,6 @@ let renderBlock = (block) => {
 			let videoItem =
 				`
 				<li>
-					<p><em>Video</em></p>
 					<video controls src="${ block.attachment.url }"></video>
 				</li>
 				`
@@ -95,18 +94,13 @@ let renderBlock = (block) => {
 			// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
 		}
 
-		// Uploaded PDFs!
-		else if (attachment.includes('pdf')) {
-			// …up to you!
-		}
-
 		// Uploaded audio!
 		else if (attachment.includes('audio')) {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
 				<li>
-					<p><em>Audio</em></p>
+					<h3>${block.title}</h3>
 					<audio controls src="${ block.attachment.url }"></video>
 				</li>
 				`
@@ -125,7 +119,6 @@ let renderBlock = (block) => {
 			let linkedVideoItem =
 				`
 				<li>
-					<p><em>Linked Video</em></p>
 					${ block.embed.html }
 				</li>
 				`
