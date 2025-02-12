@@ -67,7 +67,7 @@ let renderBlock = (block) => {
 			return text; 
 		}
 
-		let truncatedContent= truncateText(block.content_html, 20) // Limit to 20 words
+		let truncatedContent= truncateText(block.content_html, 30) // Limit to 20 words
 
 		let textItem = `
 		<p>${truncatedContent}</p>
