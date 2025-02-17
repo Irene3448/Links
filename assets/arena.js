@@ -33,7 +33,7 @@ let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
 	let channelBlocks = document.querySelector('#channel-blocks')
 
-	// Links!
+	// Links! removed <h3>${ block.title }</h3> after </picture></a>
 	if (block.class == 'Link') {
 		let linkItem =
 			`
@@ -43,7 +43,7 @@ let renderBlock = (block) => {
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
 					<img src="${ block.image.original.url }">
 				</picture></a>
-				<h3>${ block.title }</h3>
+				
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
