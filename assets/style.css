@@ -26,14 +26,21 @@ body{
 	padding: 12px;
 	text-align: left;
 	border-radius: var(--base-border-radius);
+
+	position: relative;
+	z-index: 3;
 }
 
 header img{
-	height: 50%;
+	width: 100%;
+	height: 300px;
 	border-radius: var(--base-border-radius);
 	margin-top: 12px;
-	object-fit: cover;
+	object-fit: fill;
 	overflow: hidden;
+
+	position: relative;
+	z-index: 3;
 }
 
 .heading-cta{
@@ -61,7 +68,7 @@ button{
 	border-radius: 20px;
 	background-color: white;
 	color: var(--point-color);
-	margin: 14px 14px 40px 5rem;
+	margin: 12px 14px 35px 5rem;
 	text-align: center;
 
 	position: relative;
@@ -69,22 +76,38 @@ button{
 }
 
 .about-box{
+	color: white;
 	background-color: var(--point-color);
-	padding: 20px 12px 16px 12px;
+	padding: 26px 12px 16px 12px;
 	border: 1px transparent;
 	border-radius: 0 0 8px 8px;
 }
 
+/*need help- how to make two shapes?*/
 .empty-box{
 	left: 0;
 	top: 0;
 	width: 51%;
-	height: 78.5%;
+	height: 68%;
 	background-color: white;
 	border-radius: var(--base-border-radius);
 
 	position: absolute;
 	z-index: 1;
+}
+
+.nav-container{
+	display: flex;
+	gap: 8px;
+	justify-content: space-between;
+	margin-block: 12px;
+}
+.nav-button{
+	flex: 1;
+	border: 1px solid black;
+	border-radius: 8px;
+	padding: 12px;
+	text-align: center;
 }
 
 
