@@ -161,12 +161,12 @@ section{
 	overflow-x: hidden;
 }
 
-.link-block, .image-block, .text-block, .video-block {
+/* .link-block, .image-block, .text-block, .video-block {
 	height: 160px;
 	border-radius: var(--base-border-radius);
 	object-fit: fill;
 	overflow: hidden;
-}
+} */
 
 li > img, li > iframe, li > video, li> text, li > link {
 	width: 100%;
