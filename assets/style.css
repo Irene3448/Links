@@ -45,8 +45,6 @@ body{
 	width: 100%;
 	height: 250px;
 
-	/* height: auto; */
-
 	border-radius: var(--base-border-radius);
 	margin-top: var(--gap);
 	object-fit: fill;
@@ -102,7 +100,7 @@ body{
 	transform: translateY(2px);
 }
 
-button{
+header button{
 	border-radius: 20px;
 	background-color: white;
 	color: var(--point-color);
@@ -136,6 +134,7 @@ button{
 	justify-content: space-between;
 	margin-block: var(--gap);
 }
+
 .nav-button{
 	flex: 1;
 	border: 1px solid black;
@@ -150,15 +149,17 @@ section{
 	margin-block: 2rem;
 }
 
-#channel-blocks {
+#channel-blocks{
 	max-width: 100%;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 	gap: var(--gap);
 	overflow-x: hidden;
+}
 
+.link-block, .image-block, .text-block, .video-block {
 	border-radius: var(--base-border-radius);
-	object-fit: cover;
+	object-fit: fill;
 }
 
 #channel-description{
@@ -188,6 +189,8 @@ video{
 	bottom: 3vh;
 	cursor: pointer;
 }
+
+
 
 
 @media (min-width: 425px){}
@@ -226,5 +229,9 @@ video{
 		gap: 20px;
 		justify-content: center;
 		padding-top: 20px;
+	}
+
+	.link-block, .image-block, .text-block, .video-block {
+		height: 300px;
 	}
 }

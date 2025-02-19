@@ -38,7 +38,7 @@ let renderBlock = (block) => {
 	if (block.class == 'Link') {
 		let linkItem =
 			`
-			<li><a href="${ block.source.url }">
+			<li class="link-block"><a href="${ block.source.url }">
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
@@ -51,13 +51,21 @@ let renderBlock = (block) => {
 
 	// Images!
 	else if (block.class == 'Image') {
-		// …up to you!
+		console.log ("image",block)
+		let ImageItem =
+			`
+			<li class="image-block">
+				<img src="${block.image.original.url}"></img>
+			</li>
+			`
+		channelBlocks.insertAdjacentHTML('beforeend', ImageItem)
 	}
 
 	// Text!
 	else if (block.class == 'Text') {
 		// …up to you!
-
+		console.log ("text", block)
+		
 		//Trying to shorten text
 		function truncateText(text, wordLimit) {
 			const words = text.split(" "); // Split text 
@@ -67,10 +75,13 @@ let renderBlock = (block) => {
 			return text; 
 		}
 
-		let truncatedContent= truncateText(block.content_html, 30) // Limit to 20 words
+		let truncatedContent= truncateText(block.content_html, 20) // Limit to 20 words
 
-		let textItem = `
-		<p>${truncatedContent}</p>
+		let textItem = 
+		`
+		<li class="text-block">
+			<p>${truncatedContent}</p>
+		</li>
 		`
 
 		channelBlocks.insertAdjacentHTML('beforeend', textItem)
@@ -78,6 +89,7 @@ let renderBlock = (block) => {
 
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
+		console.log ("attachment", block)
 		let attachment = block.attachment.content_type // Save us some repetition
 
 		// Uploaded videos!
@@ -85,7 +97,7 @@ let renderBlock = (block) => {
 			// …still up to you, but we’ll give you the `video` element:
 			let videoItem =
 				`
-				<li>
+				<li class="video-block">
 					<video controls src="${ block.attachment.url }"></video>
 				</li>
 				`
@@ -96,10 +108,12 @@ let renderBlock = (block) => {
 
 		// Uploaded audio!
 		else if (attachment.includes('audio')) {
+			console.log ("audio", block)
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li>
+				<li class="audio-block">
+					<h3 class="block-title">${block.generated_title}</h3>
 					<audio controls src="${ block.attachment.url }"></audio>
 				</li>
 				`
@@ -110,6 +124,7 @@ let renderBlock = (block) => {
 
 	// Linked media…
 	else if (block.class == 'Media') {
+		console.log ("media",block)
 		let embed = block.embed.type
 
 		// Linked video!
@@ -117,7 +132,7 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an example `iframe` element:
 			let linkedVideoItem =
 				`
-				<li>
+				<li class="video-block">
 					${ block.embed.html }
 				</li>
 				`
@@ -161,5 +176,4 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 			// console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
-
 	})
