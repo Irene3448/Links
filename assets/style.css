@@ -149,6 +149,10 @@ section{
 	margin-block: 2rem;
 }
 
+* {
+	outline: 1px solid red;
+}
+
 #channel-blocks{
 	max-width: 100%;
 	display: grid;
@@ -158,7 +162,15 @@ section{
 }
 
 .link-block, .image-block, .text-block, .video-block {
+	height: 160px;
 	border-radius: var(--base-border-radius);
+	object-fit: fill;
+	overflow: hidden;
+}
+
+li > img, li > iframe, li > video, li> text, li > link {
+	width: 100%;
+	height: 100%;
 	object-fit: fill;
 }
 
@@ -190,7 +202,9 @@ video{
 	cursor: pointer;
 }
 
-
+footer{
+	margin-block: var(--gap);
+}
 
 
 @media (min-width: 425px){}
