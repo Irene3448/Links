@@ -150,7 +150,7 @@ nav{
 
 .nav-button:hover {background-color: #eeeeee}
 
-.nav-button:active {
+.nav-button.active {
 	color: rgba(55, 98, 255, 0.656);
 	background-color: #dedede;
 	border: 1.5px solid rgba(55, 98, 255, 0.656);
@@ -166,6 +166,32 @@ nav{
 	overflow-x: hidden;
 
 	padding-bottom: 9px;
+}
+
+/*javascript add show buttons*/
+.show-image{
+	li{display:none;}
+	li.image-block{display:block;}
+}
+
+.show-video{
+	li{display:none;}
+	li.video-block{display:block;}
+}
+
+.show-link{
+	li{display:none;}
+	li.link-block{display:block;}
+}
+
+.show-text{
+	li{display:none;}
+	li.text-block{display:block;}
+}
+
+.show-audio{
+	li{display:none;}
+	li.audio-block{display:block;}
 }
 
 li > *{
