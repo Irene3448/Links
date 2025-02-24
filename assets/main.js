@@ -1,4 +1,4 @@
-//Filter by type
+//Filter channel-blocks by type
 let channelBlocks = document.querySelector('#channel-blocks')
 let showAll = document.querySelector('#show-all')
 let navButtons = document.querySelectorAll('.nav-button');
@@ -21,11 +21,45 @@ function toggleFilter(button, type) {
 	}
 }
 
-// Add event listeners to each button
+// filter out each button
 navButtons.forEach(button => {
 	let type = button.id.replace('show-', ''); // Extract type from ID
 	button.addEventListener('click', () => toggleFilter(button, type));
 });
+
+//channel-link, nav-button glowing animation every 5sec for 2sec but not when hovering
+document.addEventListener("DOMContentLoaded", function () {
+	const elements = document.querySelectorAll("#channel-link, .nav-button");
+  
+	elements.forEach((element) => {
+	  let isHovered = false;
+  
+	  // Listen for hover events
+	  element.addEventListener("mouseenter", function () {
+		isHovered = true;
+	  });
+  
+	  element.addEventListener("mouseleave", function () {
+		isHovered = false;
+	  });
+  
+	  function triggerGlow() {
+		if (window.matchMedia("(min-width: 375px)").matches && !isHovered) { // Check if not hovered
+		  // Only run on mobile and if not hovered
+		  element.classList.add("glow-trigger");
+  
+		  // Remove animation after 2 seconds
+		  setTimeout(() => {
+			element.classList.remove("glow-trigger");
+		  }, 2000);
+		}
+	  }
+  
+	  // Run the animation every 5 seconds (5000ms)
+	  setInterval(triggerGlow, 5000);
+	});
+  });
+
 
 
 //footer #top button 
