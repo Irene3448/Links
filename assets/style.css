@@ -24,7 +24,7 @@ body{
 	font-family: var(--primary-font-family);
 	font-size: var(--base-font-size);
 	font-weight: 350;
-	margin: 18px;
+	margin: 12px 18px;
 	max-width: 100%;
 	overflow-x:hidden;
 }
@@ -297,10 +297,12 @@ footer{
 
 	body{
 		max-width: 100%;
-		margin: 40px 80px;
+		margin: 30px 80px;
+		font-size: 18px;
 	}
 
 	#channel-title{
+		font-size: 22px;
 		padding: var(--bigger-gap);
 	}
 
@@ -348,6 +350,7 @@ footer{
 	}
 
 	#channel-link{
+		font-size: 18px;
 		height: calc(2 * 100%);
 	}
 
