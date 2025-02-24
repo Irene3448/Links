@@ -94,9 +94,6 @@ body{
 	transform: translateY(4px);
 }
 
-#channel-link.glow-trigger{
-	animation: rainbowGlow 2s linear;
-}
 
 #about {
 	border-radius: 20px;
@@ -153,6 +150,7 @@ nav{
 	100% { box-shadow: 0 0 9px violet; border-color: violet; }
 }
 
+
 .nav-button{
 	flex: 1;
 	border-radius: var(--base-border-radius);
@@ -176,16 +174,18 @@ nav{
 	animation: rainbowGlow 2s infinite linear;
 }
 
+/* active button (clicked) */
 .nav-button.active {
 	color: rgba(55, 98, 255, 0.656);
 	background-color: #dedede;
 	border: 1.5px solid rgba(55, 98, 255, 0.656);
 	box-shadow: 0 5px rgba(55, 98, 255, 0.656), 0 10px 20px rgba(55, 98, 255, 0.656);
 	transform: translateY(4px);
+	animation: none;
 }
 
-.nav-button.glow-trigger{
-	animation: rainbowGlow 2s linear;
+.glow{
+	animation: rainbowGlow 2s infinite linear;
 }
 
 #channel-blocks{

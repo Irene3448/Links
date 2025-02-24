@@ -1,11 +1,11 @@
 //Filter channel-blocks by type
-let channelBlocks = document.querySelector('#channel-blocks')
-let showAll = document.querySelector('#show-all')
+// Filter channel-blocks by type
+let channelBlocks = document.querySelector('#channel-blocks');
 let navButtons = document.querySelectorAll('.nav-button');
+let channelLink = document.querySelector('#channel-link');
 
-//add toggle filter for each type button
+// Add toggle filter for each type button
 function toggleFilter(button, type) {
-	// Check if the clicked button’s class is already applied
 	if (channelBlocks.classList.contains(`show-${type}`)) {
 		// Remove the class (toggle off)
 		channelBlocks.classList.remove(`show-${type}`);
@@ -13,7 +13,7 @@ function toggleFilter(button, type) {
 	} else {
 		// Remove all active filters first
 		channelBlocks.classList.remove('show-image', 'show-video', 'show-audio', 'show-link', 'show-text');
-		document.querySelectorAll('.nav-button').forEach(btn => btn.classList.remove('active'));
+		navButtons.forEach(btn => btn.classList.remove('active'));
 
 		// Apply the new filter (toggle on)
 		channelBlocks.classList.add(`show-${type}`);
@@ -21,45 +21,31 @@ function toggleFilter(button, type) {
 	}
 }
 
-// filter out each button
+// Filter out each button
 navButtons.forEach(button => {
 	let type = button.id.replace('show-', ''); // Extract type from ID
 	button.addEventListener('click', () => toggleFilter(button, type));
 });
 
-//channel-link, nav-button glowing animation every 8sec for 2sec but not when hovering
-document.addEventListener("DOMContentLoaded", function () {
-	const elements = document.querySelectorAll("#channel-link, .nav-button");
-  
-	elements.forEach((element) => {
-	  let isHovered = false;
-  
-	  // Listen for hover events
-	  element.addEventListener("mouseenter", function () {
-		isHovered = true;
-	  });
-  
-	  element.addEventListener("mouseleave", function () {
-		isHovered = false;
-	  });
-  
-	  function triggerGlow() {
-		if (window.matchMedia("(min-width: 375px)").matches && !isHovered) { // Check if not hovered
-		  // Only run on mobile and if not hovered
-		  element.classList.add("glow-trigger");
-  
-		  // Remove animation after 2 seconds
-		  setTimeout(() => {
-			element.classList.remove("glow-trigger");
-		  }, 2000);
+// Function to apply rainbowGlow animation except on hover or active state
+function applyRainbowGlow() {
+	navButtons.forEach(button => {
+		if (!button.matches(':hover') && !button.classList.contains('active')) {
+			button.classList.add('glow');
+		} else {
+			button.classList.remove('glow');
 		}
-	  }
-  
-	  // Run the animation every 8 seconds (8000ms)
-	  setInterval(triggerGlow, 8000);
 	});
-  });
+	channelLink.classList.add('glow');
+}
 
+// Glowing animation repeat every 8 seconds
+setInterval(() => {
+	applyRainbowGlow();
+	setTimeout(() => {
+		document.querySelectorAll('.glow').forEach(el => el.classList.remove('glow'));
+	}, 2000); // Remove glow after 2 seconds
+}, 8000);
 
 
 //footer #top button 
