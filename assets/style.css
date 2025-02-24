@@ -226,14 +226,13 @@ nav{
 
 li > *{
 	border-radius: var(--base-border-radius);
-	/* border: 1.5px solid #b0b0b0;
-	box-shadow: 0 9px #b0b0b0; */
 }
 
 li > img, li > iframe, li > video, li > text, li > link{
 	width: 100%;
 	height: 170px;
-	object-fit: fill;
+	object-fit: cover;
+	display:block;
 	border-radius: var(--base-border-radius);
 	overflow: hidden;
 }
@@ -255,11 +254,31 @@ h3{
 	border-radius: 8px 8px 0 0;
 }
 
-li > p:nth-child(2){
-	height: auto;
+.text-block > p:nth-child(2){
+	max-width: 100%;
+	height: 200px;
 	padding: 15px;
 	background-color: #e0e0e0;
 	text-align: center;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.image-block, .video-block, .audio-block, .text-block, .link-block{
+	background-color: #e0e0e0;
+	border-radius: var(--base-border-radius);
+}
+
+.image-block:hover, 
+.video-block:hover, 
+.audio-block:hover, 
+.text-block:hover, 
+.link-block:hover {
+	animation: rainbowGlow 1s infinite alternate;
+	transform: translateY(5px);
+	transition: all 0.3s ease-in-out;
 }
 
 video{
@@ -267,6 +286,15 @@ video{
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 	gap: var(--gap);
+}
+
+.link-block{
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+	display:block;
+	border-radius: var(--base-border-radius);
+	overflow: hidden;
 }
 
 #top{
@@ -348,8 +376,6 @@ footer{
 		gap: var(--bigger-gap);
 	}
 
-	nav{ top: var(--bigger-gap);}
-
 	.nav-container{
 		margin-block: var(--bigger-gap);
 	}
@@ -376,11 +402,8 @@ footer{
 	}
 
 	#channel-blocks {
-		display: grid;
 		grid-template-columns: repeat(4,1fr);
 		gap: var(--bigger-gap);
-		justify-content: center;
-		padding-top: var(--bigger-gap);
 	}
 
 	li > img, li > iframe, li > video, li > text, li > link{
@@ -391,6 +414,12 @@ footer{
 
 	li>audio{
 		height: 120px;
+	}
+
+	.link-block{
+		height: 200px;
+		overflow: hidden;
+		border-radius: var(--base-border-radius);
 	}
 
 	p:nth-child(2){
