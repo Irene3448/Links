@@ -27,7 +27,7 @@ navButtons.forEach(button => {
 	button.addEventListener('click', () => toggleFilter(button, type));
 });
 
-//channel-link, nav-button glowing animation every 5sec for 2sec but not when hovering
+//channel-link, nav-button glowing animation every 8sec for 2sec but not when hovering
 document.addEventListener("DOMContentLoaded", function () {
 	const elements = document.querySelectorAll("#channel-link, .nav-button");
   
@@ -55,8 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	  }
   
-	  // Run the animation every 5 seconds (5000ms)
-	  setInterval(triggerGlow, 5000);
+	  // Run the animation every 8 seconds (8000ms)
+	  setInterval(triggerGlow, 8000);
 	});
   });
 
