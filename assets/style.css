@@ -319,19 +319,28 @@ video{
 	border-radius: var(--base-border-radius);
 	border: 1.5px solid var(--point-color);
 	color: var(--point-color);
-	background-color: #FBC0A5;
+	background: linear-gradient(to top, #fbc0a5, #fdd8c6);
 	padding: 12px 18px;
 	position: fixed;
 	right: 5.5vw;
 	bottom: 3vh;
 	cursor: pointer;
+	
+	font-weight: bold;
+	text-transform: uppercase;
+	box-shadow: 0 4px 0px var(--point-color), 0 6px 10px rgba(0, 0, 0, 0.3);
 
-	box-shadow: 0 9px var(--point-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 }
 
 #top:hover {
-	background-color: #F8A07D;
-	color: #ffefe8;
+	background: linear-gradient(to top, #f8a07d, #ffefe8); 
+	color:var(--point-color);
+	transform: translateY(2px); 
+	box-shadow: 0 2px 0px var(--point-color), 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 #top:active {
