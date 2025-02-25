@@ -325,7 +325,7 @@ video{
 	right: 5.5vw;
 	bottom: 3vh;
 	cursor: pointer;
-	
+
 	font-weight: bold;
 	text-transform: uppercase;
 	box-shadow: 0 4px 0px var(--point-color), 0 6px 10px rgba(0, 0, 0, 0.3);
@@ -346,12 +346,14 @@ video{
 #top:active {
 	color: rgba(55, 98, 255, 0.656);
 	background-color: #dedede;
+	background: linear-gradient(to top, #f8a07d, #ffefe8); 
 	border: 1.5px solid rgba(55, 98, 255, 0.656);
 	box-shadow: 0 5px rgba(55, 98, 255, 0.656), 0 10px 20px rgba(55, 98, 255, 0.656);
 	transform: translateY(4px);
   }
 
 footer{
+	color: gray;
 	margin-block: var(--bigger-gap);
 }
 
