@@ -27,12 +27,14 @@ body{
 	margin: 12px 18px;
 	max-width: 100%;
 	overflow-x:hidden;
+
+	background-color: #fafafa;
 }
 
 #channel-title{
 	font-size: var(--heading-font-size);
 	background-color:#333;
-	color: white;	
+	color: white;
 	padding: var(--gap);
 	text-align: left;
 	border-radius: var(--base-border-radius);
@@ -317,7 +319,7 @@ video{
 	border-radius: var(--base-border-radius);
 	border: 1.5px solid var(--point-color);
 	color: var(--point-color);
-	background-color: #ffe8df;
+	background-color: #FBC0A5;
 	padding: 12px 18px;
 	position: fixed;
 	right: 5.5vw;
@@ -327,7 +329,10 @@ video{
 	box-shadow: 0 9px var(--point-color);
 }
 
-#top:hover {background-color: #eeeeee}
+#top:hover {
+	background-color: #F8A07D;
+	color: #ffefe8;
+}
 
 #top:active {
 	color: rgba(55, 98, 255, 0.656);
