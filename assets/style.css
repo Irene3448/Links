@@ -481,3 +481,10 @@ footer{
 
 }
 
+
+@media (min-width: 1300px){
+	#about{
+		margin: 20px 25px auto 150px;
+		padding: 5px 10px;
+	}
+}
