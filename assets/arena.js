@@ -55,37 +55,42 @@ let renderBlock = (block) => {
 		let ImageItem =
 			`
 			<li class="image-block">
-				<img src="${block.image.original.url}"></img>
+				<a href="${block.image.original.url}"  target="_blank">
+					<img src="${block.image.original.url}"></img>
+				</a>
 			</li>
 			`
 		channelBlocks.insertAdjacentHTML('beforeend', ImageItem)
 	}
 
-	// Text!
-	else if (block.class == 'Text') {
-		// …up to you!
-		console.log ("text", block)
-		
-		//Trying to shorten text
-		function truncateText(text, wordLimit) {
-			const words = text.split(" "); // Split text 
-			if (words.length > wordLimit){
-				return words.slice(0,wordLimit).join(" ") + "..." // Keep only the first few words
-			}
-			return text; 
+
+
+// Text! the one I had
+else if (block.class == 'Text') {
+	// …up to you!
+	console.log ("text", block)
+	
+	//Trying to shorten text
+	function truncateText(text, wordLimit) {
+		const words = text.split(" "); // Split text 
+		if (words.length > wordLimit){
+			return words.slice(0,wordLimit).join(" ") + "..." // Keep only the first few words
 		}
-
-		let truncatedContent= truncateText(block.content_html, 18) // Limit to 18 words
-
-		let textItem = 
-		`
-		<li class="text-block">
-			<p>${truncatedContent}</p>
-		</li>
-		`
-
-		channelBlocks.insertAdjacentHTML('beforeend', textItem)
+		return text; 
 	}
+
+	let truncatedContent= truncateText(block.content_html, 15) // Limit to 15 words
+
+	let textItem = 
+	`
+	<li class="text-block">
+			<p>${truncatedContent}</p>
+	</li>
+	`
+
+	channelBlocks.insertAdjacentHTML('beforeend', textItem)
+}
+
 
 	// Uploaded (not linked) media…
 	else if (block.class == 'Attachment') {
