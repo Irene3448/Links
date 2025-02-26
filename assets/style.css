@@ -337,7 +337,7 @@ video{
 	border-radius: var(--base-border-radius);
 	border: 1.5px solid var(--point-color);
 	color: var(--point-color);
-	background: linear-gradient(to top, #fbc0a5, #fdd8c6);
+	background: linear-gradient(145deg, #fdd8c6, #fbc0a5); 
 	padding: 12px 18px;
 	position: fixed;
 	right: 5.5vw;
@@ -346,7 +346,7 @@ video{
 
 	font-weight: bold;
 	text-transform: uppercase;
-	box-shadow: 0 4px 0px var(--point-color), 0 6px 10px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 3px 3px 6px rgba(255, 255, 255, 0.5), inset -3px -3px 6px rgba(0, 0, 0, 0.3), 0 4px 0px var(--point-color), 0 6px 10px rgba(0, 0, 0, 0.3);
 
 	display: flex;
 	justify-content: center;
@@ -355,18 +355,18 @@ video{
 }
 
 #top:hover {
-	background: linear-gradient(to top, #f8a07d, #ffefe8); 
+	background: linear-gradient(145deg, #ffefe8, #f8a07d); 
 	color:var(--point-color);
 	transform: translateY(2px); 
-	box-shadow: 0 2px 0px var(--point-color), 0 3px 6px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 3px 3px 6px rgba(255, 255, 255, 0.5), inset -3px -3px 6px rgba(0, 0, 0, 0.3), 0 2px 0px var(--point-color), 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 #top:active {
 	color: rgba(55, 98, 255, 0.656);
 	background-color: #dedede;
-	background: linear-gradient(to top, #f8a07d, #ffefe8); 
+	background: linear-gradient(145deg, #ffefe8, #f8a07d); 
 	border: 1.5px solid rgba(55, 98, 255, 0.656);
-	box-shadow: 0 5px rgba(55, 98, 255, 0.656), 0 10px 20px rgba(55, 98, 255, 0.656);
+	box-shadow: inset 4px 4px 8px rgba(55, 98, 255, 0.656), inset -4px -4px 8px rgba(255, 255, 255, 0.3), 0 5px rgba(55, 98, 255, 0.656), 0 10px 20px rgba(55, 98, 255, 0.656);
 	transform: translateY(4px);
   }
 
