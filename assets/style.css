@@ -444,6 +444,8 @@ footer{
 	}
 
 	.description-box{
+		font-size: var(--heading-font-size);
+		padding: 40px;
 		height: 45.5vh;
 	}
 
