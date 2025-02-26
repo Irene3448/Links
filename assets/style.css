@@ -424,6 +424,7 @@ footer{
 
 	.nav-container{
 		margin-block: var(--bigger-gap);
+		gap: var(--bigger-gap);
 	}
 
 	.nav-button{
