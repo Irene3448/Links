@@ -73,14 +73,17 @@ body{
 	border-radius: var(--base-border-radius);
 	height: auto;
 
-	border: 1.5px solid #b0b0b0;
-	color: gray;
-	background: linear-gradient(to bottom, #ffffff, #e0e0e0);
+	border: 1.5px solid #a0a0a0;
+	color: black;
+	background: linear-gradient(to bottom, #e6e6e6, #bfbfbf);
 	text-align: left;
 	cursor: pointer;
 
 	text-decoration: none;
-	box-shadow: 0 9px #b0b0b0, 0 10px 15px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.6), 
+	inset -2px -2px 5px rgba(0, 0, 0, 0.2),
+	0 6px #888888, 
+	0 8px 12px rgba(0, 0, 0, 0.2);
 	transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
@@ -88,15 +91,20 @@ body{
 	color: var(--point-color);
 	animation: rainbowGlow 2s infinite linear;
 
-	background: linear-gradient(to bottom, #f5f5f5, #d0d0d0);
-	box-shadow: 0 7px #b0b0b0, 0 12px 20px rgba(0, 0, 0, 0.15);
+	background: linear-gradient(to bottom, #f0f0f0, #cfcfcf);
+	box-shadow: 
+		inset 2px 2px 5px rgba(255, 255, 255, 0.8), 
+		inset -2px -2px 5px rgba(0, 0, 0, 0.3),
+		0 4px #666666, 
+		0 6px 10px rgba(0, 0, 0, 0.25);
 }
 
 #channel-link:active {
 	color: rgba(55, 98, 255, 0.656);
-	background-color: #dedede;
+	background: linear-gradient(to bottom, #d9d9d9, #b3b3b3);
 	border: 1.5px solid rgba(55, 98, 255, 0.656);
-	box-shadow: 0 5px rgba(55, 98, 255, 0.656), 0 10px 20px rgba(55, 98, 255, 0.656);
+	box-shadow: 0 3px rgba(55, 98, 255, 0.656), 0 10px 20px rgba(55, 98, 255, 0.656);
+	
 	transform: translateY(4px);
 	animation: none;
 }
@@ -157,15 +165,14 @@ nav{
 	100% { box-shadow: 0 0 9px violet; border-color: violet; }
 }
 
-
+/*originial button styling*/
 .nav-button{
 	flex: 1;
 	border-radius: var(--base-border-radius);
-	border: 1.5px solid #b0b0b0;
-	color: gray;
+	border: 1.5px solid #a0a0a0;
+	color: black;
 
-	background: linear-gradient(to bottom, #ffffff, #e0e0e0);
-
+	background: linear-gradient(to bottom, #e6e6e6, #bfbfbf);
 	padding: var(--gap);
 	text-align: center;
 	cursor: pointer;
@@ -173,8 +180,12 @@ nav{
 	display: inline-block;
 	text-decoration: none;
 
-	box-shadow: 0 9px #b0b0b0, 0 10px 15px rgba(0, 0, 0, 0.1);
-	
+	box-shadow: 
+	inset 2px 2px 5px rgba(255, 255, 255, 0.6), 
+	inset -2px -2px 5px rgba(0, 0, 0, 0.2),
+	0 6px #888888, 
+	0 8px 12px rgba(0, 0, 0, 0.2);
+
 	transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
@@ -182,16 +193,16 @@ nav{
 	color: var(--point-color);
 	animation: rainbowGlow 2s infinite linear;
 
-	background: linear-gradient(to bottom, #f5f5f5, #d0d0d0);
-	box-shadow: 0 7px #b0b0b0, 0 12px 20px rgba(0, 0, 0, 0.15);
+	background: linear-gradient(to bottom, #f0f0f0, #cfcfcf);
+	box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.8), inset -2px -2px 5px rgba(0, 0, 0, 0.3), 0 4px #666666, 0 6px 10px rgba(0, 0, 0, 0.25);	
 }
 
 /* active button (clicked) */
 .nav-button.active {
 	color: rgba(55, 98, 255, 0.656);
-	background-color: #dedede;
+	background: linear-gradient(to bottom, #d9d9d9, #b3b3b3);
 	border: 1.5px solid rgba(55, 98, 255, 0.656);
-	box-shadow: 0 5px rgba(55, 98, 255, 0.656), 0 10px 20px rgba(55, 98, 255, 0.656);
+	box-shadow: 0 3px rgba(55, 98, 255, 0.656), 0 10px 20px rgba(55, 98, 255, 0.656);
 
 	transform: translateY(4px);
 	animation: none;
