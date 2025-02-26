@@ -389,6 +389,10 @@ footer{
 		padding: var(--bigger-gap);
 	}
 
+	#channel-link{
+		font-size: 20px;
+	}
+
 	.img-and-about{
 		display: flex;
 		flex-direction: row;
@@ -428,6 +432,7 @@ footer{
 	}
 
 	.nav-button{
+		font-size: var(--heading-font-size);
 		padding: var(--bigger-gap);
 	}
 
@@ -437,6 +442,7 @@ footer{
 	}
 
 	#about{
+		font-size: var(--heading-font-size);
 		margin: 20px 20px auto 50px;
 	}
 
@@ -487,6 +493,7 @@ footer{
 
 @media (min-width: 1300px){
 	#about{
+		font-size: var(--heading-font-size);
 		margin: 20px 25px auto 150px;
 		padding: 5px 10px;
 	}
